@@ -1,7 +1,7 @@
 const data = {
   employees: [
     {
-      name: "john",
+      name: "John",
       postion: "FrontEnd Developer",
       office: "UK",
       salary: 100000,
@@ -13,8 +13,14 @@ const data = {
       salary: 90000,
     },
     {
-      name: "james",
+      name: "James",
       postion: "Devops",
+      office: "US",
+      salary: 80000,
+    },
+    {
+      name: "Mosh",
+      postion: "Full Stack Developer",
       office: "US",
       salary: 80000,
     },

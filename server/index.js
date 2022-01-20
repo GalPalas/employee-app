@@ -1,14 +1,16 @@
 import express from "express";
-import data from "./data.js";
+import employeeRouter from "./routes/employee.js";
+import mongoose from "mongoose";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("server is ready");
-});
+app.use("/api/employees", employeeRouter);
 
-app.get("/api/employees", (req, res) => {
-  res.send(data.employees);
+mongoose.connect(
+  "mongodb+srv://Gal:KfjZDmQibBb0Xybu@store.dvf8b.mongodb.net/EmployeeSys?retryWrites=true&w=majority"
+);
+mongoose.connection.once("open", () => {
+  console.log("conneted to database");
 });
 
 app.listen(5000, () => console.log("server running on port 5000"));
